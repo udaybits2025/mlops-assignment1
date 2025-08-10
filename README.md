@@ -167,7 +167,7 @@ The complete project is hosted on GitHub:
 
 ### CI/CD Pipeline
 The GitHub Actions pipeline for building and pushing the Docker image can be found here:
-
+[Github Actions repo](https://github.com/udaybits2025/mlops-assignment1/actions)
 
 ### Docker Hub Repository
 The Docker image for the project is available on Docker Hub:
