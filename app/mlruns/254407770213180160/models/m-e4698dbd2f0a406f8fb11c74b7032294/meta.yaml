@@ -1,0 +1,10 @@
+artifact_location: file:///Users/udaykumargajavalli/Documents/mlops-assignment-main/mlruns/254407770213180160/models/m-e4698dbd2f0a406f8fb11c74b7032294/artifacts
+creation_timestamp: 1754847017889
+experiment_id: '254407770213180160'
+last_updated_timestamp: 1754847018990
+model_id: m-e4698dbd2f0a406f8fb11c74b7032294
+model_type: null
+name: decision_tree
+source_run_id: dfb3fd286a254195a4e194d0e945ca0a
+status: 2
+status_message: null

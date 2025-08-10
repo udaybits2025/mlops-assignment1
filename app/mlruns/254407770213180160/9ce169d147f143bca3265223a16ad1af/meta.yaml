@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/udaykumargajavalli/Documents/mlops-assignment-main/mlruns/254407770213180160/9ce169d147f143bca3265223a16ad1af/artifacts
+end_time: 1754846993687
+entry_point_name: ''
+experiment_id: '254407770213180160'
+lifecycle_stage: active
+run_id: 9ce169d147f143bca3265223a16ad1af
+run_name: Decision Tree
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754846992371
+status: 3
+tags: []
+user_id: udaykumargajavalli
