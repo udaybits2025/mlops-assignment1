@@ -163,15 +163,15 @@ curl -X POST http://localhost:8000/predict \
 
 ### GitHub Repository
 The complete project is hosted on GitHub:
-[https://github.com/arjunrajeev/mlops-assignment](https://github.com/arjunrajeev/mlops-assignment)
+[Github repo](https://github.com/udaybits2025/mlops-assignment1/)
 
 ### CI/CD Pipeline
 The GitHub Actions pipeline for building and pushing the Docker image can be found here:
-[https://github.com/arjunrajeev/mlops-assignment/actions](https://github.com/arjunrajeev/mlops-assignment/actions)
+
 
 ### Docker Hub Repository
 The Docker image for the project is available on Docker Hub:
-[https://hub.docker.com/repository/docker/arjajje/california-housing-predictor/general](https://hub.docker.com/repository/docker/arjajje/california-housing-predictor/general)
+[Dockerhub url](https://hub.docker.com/repository/docker/udaygajavalli/california-housing/general)
 
 ---
 
