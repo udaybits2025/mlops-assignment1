@@ -21,8 +21,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/california-housing-predictor:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/california-housing:latest .
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/california-housing-predictor:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/california-housing:latest
