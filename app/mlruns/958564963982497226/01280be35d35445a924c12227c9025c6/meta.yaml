@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/udaykumargajavalli/Documents/mlops-assignment-main/mlruns/958564963982497226/01280be35d35445a924c12227c9025c6/artifacts
+end_time: 1754847539929
+entry_point_name: ''
+experiment_id: '958564963982497226'
+lifecycle_stage: active
+run_id: 01280be35d35445a924c12227c9025c6
+run_name: Linear Regression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754847538679
+status: 3
+tags: []
+user_id: udaykumargajavalli

@@ -1,0 +1,6 @@
+artifact_location: file:///Users/udaykumargajavalli/Documents/mlops-assignment-main/mlruns/254407770213180160
+creation_time: 1754846956535
+experiment_id: '254407770213180160'
+last_update_time: 1754846956535
+lifecycle_stage: active
+name: CaliforniaHousing_Regression

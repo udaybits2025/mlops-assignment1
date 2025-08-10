@@ -1,7 +1,7 @@
+dvc
 pandas
-numpy
 scikit-learn
-flask
-ipykernel
-pyyaml
 mlflow
+fastapi
+uvicorn
+prometheus_fastapi_instrumentator

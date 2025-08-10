@@ -1,0 +1,10 @@
+artifact_location: file:///Users/udaykumargajavalli/Documents/mlops-assignment-main/mlruns/254407770213180160/models/m-9f31643ded4b480e839d7363730a76ad/artifacts
+creation_timestamp: 1754846956664
+experiment_id: '254407770213180160'
+last_updated_timestamp: 1754846957882
+model_id: m-9f31643ded4b480e839d7363730a76ad
+model_type: null
+name: linear_regression
+source_run_id: c69dc35a48ae463da563329d785f1fe3
+status: 2
+status_message: null
