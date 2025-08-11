@@ -1,0 +1,18 @@
+aliases: []
+creation_timestamp: 1754916085704
+current_stage: None
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1754916085704
+metrics: null
+model_id: m-8ccd2953dbab448e8a213f8e23112f10
+name: BestCaliforniaHousingModel - Linear Regression
+params: null
+run_id: e2ea3e0bce1242e98cf3f91778e287ce
+run_link: null
+source: models:/m-8ccd2953dbab448e8a213f8e23112f10
+status: READY
+status_message: null
+storage_location: file:///Users/udaykumargajavalli/Documents/GitHub/mlops-assignment1/mlruns/904607580356751650/models/m-8ccd2953dbab448e8a213f8e23112f10/artifacts
+user_id: null
+version: 1
