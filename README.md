@@ -125,12 +125,12 @@ Use the sample `curl` command:
 curl -X POST http://localhost:8000/predict \
   -H "Content-Type: application/json" \
   -d '{
-    "medinc": 112.3252,
+    "medinc": 8.3252,
     "house_age": 41.0,
-    "ave_rooms": 6.9841,
-    "ave_bedrms": 1.0238,
+    "ave_rooms": 6.984126984126984,
+    "ave_bedrms": 1.0238095238095235,
     "population": 322.0,
-    "ave_occup": 2.5556,
+    "ave_occup": 2.555555555555556,
     "latitude": 37.88,
     "longitude": -122.23,
     "households": 126.0,
