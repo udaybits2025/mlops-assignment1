@@ -30,7 +30,9 @@ def evaluate_model(model, model_name, params={}):
 
         # Add tags for better organization
         mlflow.set_tag("model_type", model.__class__.__name__)
-        mlflow.set_tag("training_data_shape", f"{len(X_train)}x{len(X_train.columns)}")
+        mlflow.set_tag(
+            "training_data_shape", f"{len(X_train)}x{len(X_train.columns)}"
+        )
 
         # Train
         model.fit(X_train, y_train)

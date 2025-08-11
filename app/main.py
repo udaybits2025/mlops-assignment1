@@ -1,13 +1,13 @@
 from statistics import LinearRegression
-
 import joblib
 import pandas as pd
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
-# from app.logger_config import log
 import logging
-
+from prometheus_fastapi_instrumentator import Instrumentator
+from pydantic import BaseModel, Field
+from prometheus_client import Counter, Histogram, start_http_server
 
 # Configure logging to both console and file
 log = logging.getLogger("api_logger")
@@ -17,21 +17,21 @@ log.setLevel(logging.INFO)
 if not log.handlers:
     # Console handler
     console_handler = logging.StreamHandler()
-    console_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+    console_handler.setFormatter(
+        logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        )
+    )
     log.addHandler(console_handler)
 
     # File handler
     file_handler = logging.FileHandler("prediction_logs.log")
-    file_handler.setFormatter(logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    ))
+    file_handler.setFormatter(
+        logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        )
+    )
     log.addHandler(file_handler)
-
-
-from prometheus_fastapi_instrumentator import Instrumentator
-from pydantic import BaseModel, Field
-from prometheus_client import Counter, Histogram, start_http_server
-
 
 class HousingInput(BaseModel):
     medinc: float = Field(..., gt=0)
@@ -48,19 +48,14 @@ class HousingInput(BaseModel):
     population_per_household: float = Field(..., ge=0)
     medinc_log: float
 
-
 class RetrainData(BaseModel):
     data: list[HousingInput]
     target: list[float]
 
-
 app = FastAPI()
 
-
 @app.exception_handler(RequestValidationError)
-async def validation_exception_handler(
-    request: Request, exc: RequestValidationError
-):
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
     # Log the validation error
     error_details = exc.errors()
     log.error(
@@ -75,7 +70,6 @@ async def validation_exception_handler(
         },
     )
 
-
 Instrumentator().instrument(app).expose(app)
 # Load the model
 try:
@@ -84,19 +78,20 @@ except FileNotFoundError:
     log.error("Could not find a model to load.")
     raise HTTPException(status_code=500, detail="Model file not found.")
 
-
 # Prometheus metrics
 REQUEST_COUNT = Counter(
-    "request_count", "Total number of requests received", ["endpoint"]
+    "request_count",
+    "Total number of requests received",
+    ["endpoint"]
 )
 REQUEST_LATENCY = Histogram(
-    "request_latency_seconds", "Latency of requests in seconds", ["endpoint"]
+    "request_latency_seconds",
+    "Latency of requests in seconds",
+    ["endpoint"]
 )
-
 
 # Start Prometheus metrics server
 start_http_server(8001)
-
 
 @app.post("/predict")
 def predict(input_data: HousingInput):
@@ -121,8 +116,10 @@ def predict(input_data: HousingInput):
             }
         except Exception as e:
             log.error(e)
-            raise HTTPException(status_code=400, detail=f"Prediction failed: {str(e)}")
-
+            raise HTTPException(
+                status_code=400,
+                detail=f"Prediction failed: {str(e)}"
+            )
 
 @app.post("/retrain")
 def retrain(retrain_data: RetrainData):
@@ -139,4 +136,7 @@ def retrain(retrain_data: RetrainData):
             return {"status": "Model retrained successfully"}
         except Exception as e:
             log.error(e)
-            raise HTTPException(status_code=400, detail=f"Retraining failed: {str(e)}")
+            raise HTTPException(
+                status_code=400,
+                detail=f"Retraining failed: {str(e)}"
+            )
