@@ -175,10 +175,6 @@ The Docker image for the project is available on Docker Hub:
 
 ---
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
 ## Contributors
 - **Udaykumar Gajavalli**
+- **Tadiparthi Manasa**
