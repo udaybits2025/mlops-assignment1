@@ -33,6 +33,7 @@ if not log.handlers:
     )
     log.addHandler(file_handler)
 
+
 class HousingInput(BaseModel):
     medinc: float = Field(..., gt=0)
     house_age: float = Field(..., ge=0)
@@ -48,11 +49,14 @@ class HousingInput(BaseModel):
     population_per_household: float = Field(..., ge=0)
     medinc_log: float
 
+
 class RetrainData(BaseModel):
     data: list[HousingInput]
     target: list[float]
 
+
 app = FastAPI()
+
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
@@ -70,13 +74,16 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         },
     )
 
+
 Instrumentator().instrument(app).expose(app)
+
 # Load the model
 try:
     model = joblib.load("models/best_model.pkl")
 except FileNotFoundError:
     log.error("Could not find a model to load.")
     raise HTTPException(status_code=500, detail="Model file not found.")
+
 
 # Prometheus metrics
 REQUEST_COUNT = Counter(
@@ -92,6 +99,7 @@ REQUEST_LATENCY = Histogram(
 
 # Start Prometheus metrics server
 start_http_server(8001)
+
 
 @app.post("/predict")
 def predict(input_data: HousingInput):
@@ -120,6 +128,7 @@ def predict(input_data: HousingInput):
                 status_code=400,
                 detail=f"Prediction failed: {str(e)}"
             )
+
 
 @app.post("/retrain")
 def retrain(retrain_data: RetrainData):
