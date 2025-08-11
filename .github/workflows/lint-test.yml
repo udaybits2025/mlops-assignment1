@@ -38,7 +38,7 @@ jobs:
 
           python -m pip install --upgrade pip
 
-          pip install flake8 pytest fastapi
+          pip install flake8 pytest fastapi httpx
  
       - name: Lint with flake8
 

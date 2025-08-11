@@ -8,3 +8,4 @@ prometheus_fastapi_instrumentator
 pylint
 flake8
 matplotlib
+httpx
