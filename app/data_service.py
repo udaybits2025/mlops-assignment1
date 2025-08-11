@@ -44,7 +44,11 @@ scaler = StandardScaler()
 scaled_features = scaler.fit_transform(df[features_to_scale])
 
 # Handle NaNs, Infs, and extreme values after scaling
-scaled_features = np.nan_to_num(scaled_features, nan=0.0, posinf=np.max(scaled_features[np.isfinite(scaled_features)]), neginf=np.min(scaled_features[np.isfinite(scaled_features)]))
+pos_inf_val = np.max(scaled_features[np.isfinite(scaled_features)])
+neg_inf_val = np.min(scaled_features[np.isfinite(scaled_features)])
+scaled_features = np.nan_to_num(
+    scaled_features, nan=0.0, posinf=pos_inf_val, neginf=neg_inf_val
+)
 
 # Update DataFrame with cleaned scaled features
 df[features_to_scale] = scaled_features
