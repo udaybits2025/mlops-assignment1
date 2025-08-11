@@ -180,3 +180,5 @@ The Docker image for the project is available on Docker Hub:
 ## Contributors
 - **Udaykumar Gajavalli**
 - **Tadiparthi Manasa**
+- **DAGINEESHWARI R**
+- **NORONHA SERTORIO SAVIO**
