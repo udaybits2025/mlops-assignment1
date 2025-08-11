@@ -7,6 +7,8 @@ This project aims to predict California housing prices using machine learning mo
 
 ## Architecture
 
+<img width="3705" height="1579" alt="image" src="https://github.com/user-attachments/assets/68930c75-c849-4f6c-9699-c9a0606868e0" />
+
 ### 1. **Data Pipeline**
 - **Source**: The California housing dataset is fetched using `sklearn.datasets.fetch_california_housing`.
 - **Preprocessing**: The dataset is preprocessed in `data_service.py`:
