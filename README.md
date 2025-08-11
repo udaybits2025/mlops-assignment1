@@ -173,7 +173,7 @@ The GitHub Actions pipeline for building and pushing the Docker image can be fou
 
 ### Docker Hub Repository
 The Docker image for the project is available on Docker Hub:
-[Dockerhub url](https://hub.docker.com/repository/docker/udaygajavalli/california-housing/general)
+[Dockerhub url](https://hub.docker.com/r/udaygajavalli/california-housing)
 
 ---
 
