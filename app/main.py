@@ -59,12 +59,12 @@ app = FastAPI()
 
 
 @app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request: Request, exc: RequestValidationError):
+async def validation_exception_handler(request:Request,exc:RequestValidationError):
     # Log the validation error
     error_details = exc.errors()
     log.error(
-        f"Pydantic validation failed for request {request.url.path}: "
-        f"{error_details}"
+        "Pydantic validation failed for request "
+        f"{request.url.path}: {error_details}"
     )
     return JSONResponse(
         status_code=422,
