@@ -158,6 +158,11 @@ curl -X POST http://localhost:8000/predict \
   - Handling of NaNs, Infs, and extreme values.
 - **Retraining**:
   - `/retrain` endpoint for model retraining on new data.
+- **Pydantic Validation**:
+  - Uses Pydantic models (HousingInput) to define the expected request schema and perform automatic data validation.
+- **Monitoring Using Prometheus & Grafana**:
+  - Integrated with prometheus-fastapi-instrumentator to expose key metrics (request count, latency) on a /metrics endpoint for Prometheus to scrape. Connects to Prometheus as a data source to visualize metrics
+    in dashboards. Pre-configured data sources and dashboards to provide an immediate view of the API's performance (e.g., request rate, error rate, latency).
 
 ---
 
